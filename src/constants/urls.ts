@@ -1,0 +1,7 @@
+export const URLS = {
+
+    BASE_URL: 'https://www.saucedemo.com',
+
+    INVENTORY_URL:
+      'https://www.saucedemo.com/inventory.html'
+};
