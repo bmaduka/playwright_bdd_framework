@@ -22,7 +22,8 @@ Feature: Inventory Page
 
     And api product count should match ui
 
-    Scenario: Validate inventory page
+  @visual
+  Scenario: Validate inventory page
 
     Given user logs in successfully
 
@@ -30,7 +31,8 @@ Feature: Inventory Page
 
     And inventory visual regression passes
 
-    Scenario: Validate product image
+  @visual
+  Scenario: Validate product image
 
     Given user logs in successfully
 

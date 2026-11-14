@@ -14,6 +14,9 @@ Then(
 'inventory visual regression passes',
 async function () {
 
+    const browser =
+    process.env.BROWSER || 'chromium';
+
     const inventoryPage =
         new InventoryPage(
             PageFixture.page
@@ -24,9 +27,9 @@ async function () {
 
     const result =
         VisualComparison.compare(
-            'visual-baseline/inventory-page.png',
+            `visual-baseline/${browser}/inventory-page.png`,
             'visual-actual/inventory-page.png',
-            'visual-diff/inventory-page.png'
+            `visual-diff/${browser}/inventory-page.png`
         );
 
     expect(result).toBeTruthy();
@@ -36,6 +39,8 @@ async function () {
 Then(
 'product image visual regression passes',
 async function () {
+
+    const browser = process.env.BROWSER || 'chromium';
 
     const inventoryPage =
         new InventoryPage(
@@ -47,9 +52,9 @@ async function () {
 
     const result =
         VisualComparison.compare(
-            'visual-baseline/product-card.png',
+            `visual-baseline/${browser}/product-card.png`,
             'visual-actual/product-card.png',
-            'visual-diff/product-card.png'
+            `visual-diff/${browser}/product-card.png`
         );
 
     expect(result).toBeTruthy();
