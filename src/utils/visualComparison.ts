@@ -37,6 +37,16 @@ export class VisualComparison {
 
         if (mismatchedPixels > 0) {
 
+            const diffDirectory = path.dirname(diffPath);
+
+            if (!fs.existsSync(diffDirectory)) {
+
+                fs.mkdirSync(
+                    diffDirectory,
+                    { recursive: true }
+                );
+            }
+
             fs.writeFileSync(
                 diffPath,
                 PNG.sync.write(diff)
